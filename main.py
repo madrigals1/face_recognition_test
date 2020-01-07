@@ -8,13 +8,13 @@ IMAGE_LOCATION = "images/almaz_group.jpg"
 IMAGE_SCALE = 200
 
 # Getting face locations using face_recognition module
-image = face_recognition.load_image_file(IMAGE_LOCATION)
-face_locations = face_recognition.face_locations(image)
+fr_image = face_recognition.load_image_file(IMAGE_LOCATION)
+face_locations = face_recognition.face_locations(fr_image)
 
 # Calculating grid for showing images in Tkinter
-lf = len(face_locations)
-grid_width = math.ceil(math.sqrt(lf))
-grid_height = math.ceil(lf / grid_width)
+face_locations_length = len(face_locations)
+grid_width = math.ceil(math.sqrt(face_locations_length))
+grid_height = math.ceil(face_locations_length / grid_width)
 
 
 class Window(Frame):
@@ -24,21 +24,21 @@ class Window(Frame):
         self.pack(fill=BOTH, expand=1)
 
         # Tkinter loads same image on its own
-        load = Image.open(IMAGE_LOCATION)
+        image = Image.open(IMAGE_LOCATION)
 
-        for i in range(lf):
+        for i in range(face_locations_length):
             # Getting positions for each images
             top, right, bottom, left = face_locations[i]
-            cropped = load.crop([left, top, right, bottom])
+            cropped_image = image.crop([left, top, right, bottom])
 
             # Resizing each image to same scale
-            cropped = cropped.resize((IMAGE_SCALE, IMAGE_SCALE), Image.ANTIALIAS)
-            render = ImageTk.PhotoImage(cropped)
-            img = Label(self, image=render)
-            img.image = render
+            cropped_image = cropped_image.resize((IMAGE_SCALE, IMAGE_SCALE), Image.ANTIALIAS)
+            render = ImageTk.PhotoImage(cropped_image)
+            label = Label(self, image=render)
+            label.image = render
 
             # Setting image position according to the grid
-            img.place(x=i % grid_width * IMAGE_SCALE, y=i // grid_width * IMAGE_SCALE)
+            label.place(x=i % grid_width * IMAGE_SCALE, y=i // grid_width * IMAGE_SCALE)
 
 
 # Rendering window with size based on grid

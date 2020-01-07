@@ -1,4 +1,6 @@
+Click==7.0
 dlib==19.18.0
-face_recognition
-matplotlib
-Pillow
+face-recognition==1.2.3
+face-recognition-models==0.3.0
+numpy==1.18.1
+Pillow==7.0.0

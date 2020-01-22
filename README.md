@@ -29,6 +29,11 @@ pip install -r requirements.txt
     * Change `IMAGE_LOCATION_UNKNOWN` configuration variable value to the location of photo of person 
     you want to **compare with the first one**. (Must be photo with only **one person**)
     * Run `python check_person.py` 
+* To check the person in the video
+    * Go to the folder `scripts`
+    * Open `video.py`
+    * Add person name and image location to `PERSONS` configuration variable
+    * Run `python video.py` 
     
 ## Demo
 
@@ -40,6 +45,9 @@ pip install -r requirements.txt
 
 #### Different person
 ![Different](demo/different.png)
+
+#### Video
+![Video](demo/video.gif)
 
 ## Built With
 

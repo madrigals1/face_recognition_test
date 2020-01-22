@@ -11,26 +11,24 @@ import numpy as np
 # OpenCV is *not* required to use the face_recognition library. It's only required if you want to run this
 # specific demo. If you have trouble installing it, try any of the other demos that don't require it instead.
 
+PERSONS = [
+    {
+        "name": "Almaz",
+        "image_location": "../images/almaz_office.jpg",
+    },
+    {
+        "name": "Adi",
+        "image_location": "../images/adi_street.jpg",
+    },
+]
+
 # Get a reference to webcam #0 (the default one)
 video_capture = cv2.VideoCapture(0)
 
-# Load a sample picture and learn how to recognize it.
-almaz_image = face_recognition.load_image_file("../images/almaz_office.jpg")
-almaz_face_encoding = face_recognition.face_encodings(almaz_image)[0]
-
-# Load a second sample picture and learn how to recognize it.
-adi_image = face_recognition.load_image_file("../images/adi_street.jpg")
-adi_face_encoding = face_recognition.face_encodings(adi_image)[0]
-
 # Create arrays of known face encodings and their names
-known_face_encodings = [
-    almaz_face_encoding,
-    adi_face_encoding
-]
-known_face_names = [
-    "Almaz",
-    "Adi"
-]
+known_face_encodings = list(
+    map(lambda x: face_recognition.face_encodings(face_recognition.load_image_file(x["image_location"]))[0], PERSONS))
+known_face_names = list(map(lambda x: x["name"], PERSONS))
 
 # Initialize some variables
 face_locations = []

@@ -3,7 +3,7 @@ from tkinter import *
 from PIL import Image, ImageTk
 
 # config variables
-IMAGE_LOCATION_KNOWN = "../images/almaz_office.jpg"
+IMAGE_LOCATION_KNOWN = "../images/aitemir_suit.jpg"
 IMAGE_LOCATION_UNKNOWN = "../images/almaz_bike.jpg"
 # IMAGE_LOCATION_UNKNOWN = "../images/almazer.jpg"
 IMAGE_SCALE = 200
@@ -17,8 +17,7 @@ unknown_encoding = face_recognition.face_encodings(unknown_image)
 face_locations_known = face_recognition.face_locations(face_recognition.load_image_file(IMAGE_LOCATION_KNOWN))
 face_locations_unknown = face_recognition.face_locations(face_recognition.load_image_file(IMAGE_LOCATION_UNKNOWN))
 
-results = face_recognition.compare_faces([known_encoding[0]], unknown_encoding[0])
-print(results[0])
+results = face_recognition.compare_faces([known_encoding[0]], unknown_encoding[0], 0.5)
 
 
 class Window(Frame):
@@ -52,7 +51,9 @@ class Window(Frame):
         label_known.place(x=50, y=50)
         label_unknown.place(x=300, y=50)
 
-        text = Label(width=30, height=2, text="Это один и тот же человек" if results[0] else "Это разные человеки, хотя похожи", font="Arial 25", padx=0, pady=0)
+        text = Label(width=30, height=2,
+                     text="Это один и тот же человек" if results[0] else "Это разные человеки, хотя похожи",
+                     font="Arial 25", padx=0, pady=0)
         text.pack()
 
 

@@ -38,16 +38,16 @@ pip install -r requirements.txt
 ## Demo
 
 #### Finding faces
-![Faces](demo/faces.png)
+![Faces](https://i.imgur.com/v42j560.png)
 
 #### Same person
-![Same](demo/same.png)
+![Same](https://i.imgur.com/wOLlm1p.png)
 
 #### Different person
-![Different](demo/different.png)
+![Different](https://i.imgur.com/TdGWQyd.png)
 
 #### Video
-![Video](demo/video.gif)
+![Video](https://github.com/madrigals1/face_recognition_test/raw/master/demo/video.gif)
 
 ## Built With
 

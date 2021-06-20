@@ -47,7 +47,7 @@ pip install -r requirements.txt
 ![Different](https://i.imgur.com/TdGWQyd.png)
 
 #### Video
-![Video](https://github.com/madrigals1/face_recognition_test/raw/master/demo/video.gif)
+![Video](https://imgur.com/fcJdC0V.gif)
 
 ## Built With
 

@@ -8,6 +8,18 @@ Python version >3.5 - [download](https://www.python.org/downloads/)
 
 ## Installation
 
+Create virtual environment
+
+```
+python -m venv venv
+```
+
+Activate virtual environment
+
+```
+.\venv\Scripts\activate
+```
+
 ```
 pip install -r requirements.txt
 ```

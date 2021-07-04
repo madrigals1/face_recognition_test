@@ -53,10 +53,10 @@ pip install -r requirements.txt
 ![Faces](https://i.imgur.com/v42j560.png)
 
 #### Same person
-![Same](https://i.imgur.com/wOLlm1p.png)
+![Same](https://i.imgur.com/ZkwMWBn.png)
 
 #### Different person
-![Different](https://i.imgur.com/TdGWQyd.png)
+![Different](https://i.imgur.com/BHNYMXt.png)
 
 #### Video
 ![Video](https://imgur.com/fcJdC0V.gif)

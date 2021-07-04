@@ -4,7 +4,7 @@ Project for testing functionality of Face Recognition python module
 
 ## Prerequisites
 
-Python version >3.5 - [download](https://www.python.org/downloads/)
+[Python3](https://www.python.org/downloads/) - version 3.5+
 
 ## Installation
 

@@ -32,7 +32,9 @@ class Window(Frame):
             cropped_image = image.crop([left, top, right, bottom])
 
             # Resizing each image to same scale
-            cropped_image = cropped_image.resize((IMAGE_SCALE, IMAGE_SCALE), Image.ANTIALIAS)
+            cropped_image = cropped_image.resize(
+                (IMAGE_SCALE, IMAGE_SCALE), Image.ANTIALIAS
+            )
             render = ImageTk.PhotoImage(cropped_image)
             label = Label(self, image=render)
             label.image = render
@@ -45,5 +47,7 @@ class Window(Frame):
 root = Tk()
 app = Window(root)
 root.wm_title("Faces")
-root.geometry(str(grid_width * IMAGE_SCALE + 5) + "x" + str(grid_height * IMAGE_SCALE + 5))
+root.geometry(
+    str(grid_width * IMAGE_SCALE + 5) + "x" + str(grid_height * IMAGE_SCALE + 5)
+)
 root.mainloop()
